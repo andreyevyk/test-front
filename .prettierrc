@@ -6,13 +6,5 @@
   "trailingComma": "none",
   "jsxBracketSameLine": false,
   "parser": "babel",
-  "semi": false,
-  "overrides": [
-    {
-      "files": "*.css",
-      "options": {
-        "parser": "css"
-      }
-    }
-  ]
+  "semi": false
 }
