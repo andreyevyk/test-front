@@ -1,13 +1,13 @@
-import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import Routes from './routes'
 import GlobalStyle from './styles/globalStyle'
 import { defaultTheme } from './styles/theme'
 
-const App = () => {
+function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <div>Boa sorte! 🚀</div>
+      <Routes />
     </ThemeProvider>
   )
 }
