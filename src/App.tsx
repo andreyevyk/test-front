@@ -1,6 +1,15 @@
 import React from 'react'
-import './App.css'
+import { ThemeProvider } from 'styled-components'
+import GlobalStyle from './styles/globalStyle'
+import { defaultTheme } from './styles/theme'
 
-const App = () => <div className="App">Boa sorte! 🚀</div>
+const App = () => {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle />
+      <div>Boa sorte! 🚀</div>
+    </ThemeProvider>
+  )
+}
 
 export default App
