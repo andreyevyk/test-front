@@ -5,7 +5,13 @@ const GlobalStyle = createGlobalStyle`
   ${resetCss}
 
   body{
-    background-color: #282c34;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+
+    background: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
   }
 }
 
