@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Home = React.lazy(() => import('../pages/Home'))
+const Cart = React.lazy(() => import('../pages/Cart'))
 
 interface IRoute {
   path: string;
@@ -10,6 +10,6 @@ interface IRoute {
 export const routes: IRoute[] = [
   {
     path: '/',
-    element: Home
+    element: Cart
   }
 ]
