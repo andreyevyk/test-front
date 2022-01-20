@@ -1,12 +1,7 @@
 import { Input, Button } from 'components'
 
 function Cart() {
-  return (
-    <div style={{ background: '#FFF' }}>
-      <Button>Teste</Button>
-      <Input label="teste" containerStyle={{ width: 300 }} placeholder="TEste" />
-    </div>
-  )
+  return <Input label="teste" containerStyle={{ width: 300 }} placeholder="TEste" />
 }
 
 export default Cart
