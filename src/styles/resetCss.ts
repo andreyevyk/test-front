@@ -88,6 +88,7 @@ export const resetCss = css`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    box-sizing: border-box;
   }
   /* HTML5 display-role reset for older browsers */
   article,
@@ -124,5 +125,11 @@ export const resetCss = css`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+
+  html,
+  body,
+  div#root {
+    height: 100vh;
   }
 `

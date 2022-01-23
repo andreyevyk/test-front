@@ -1,4 +1,4 @@
-import { Navbar } from 'components'
+import { Navbar } from 'molecules/Navbar'
 import React from 'react'
 import { BrowserRouter, Route, Routes as RouterRoutes } from 'react-router-dom'
 import { routes } from './data'
@@ -14,7 +14,7 @@ export function Routes() {
               path={path}
               element={
                 <React.Suspense fallback={<>Carregando...</>}>
-                  <Navbar path={path} />
+                  <Navbar routes={routes} path={path} />
                   <Element />
                 </React.Suspense>
               }

@@ -17,6 +17,7 @@ export const Button = styled.button`
   letter-spacing: 0.5px;
   line-height: 24px;
   text-align: center;
+  text-transform: uppercase;
 
   transition: background 0.2s, box-shadow: 0.2s;
 

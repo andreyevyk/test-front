@@ -10,7 +10,7 @@ export const defaultTheme: DefaultTheme = {
     error: '#F30',
 
     title: '#999999',
-    text: '#212121',
+    text: '#212122',
     line: '#E7E7E7',
     label: '#CCCCCC',
 
