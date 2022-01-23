@@ -1,17 +1,18 @@
-import { IProduct, Product } from 'molecules/Product'
+import { Product } from 'molecules/Product'
 import { Title, Wrapper } from './styles'
+import { ProductsListProps } from './types'
 
-interface ProductsListProps {
-  title: string;
-  products: IProduct[];
-}
 export function ProductsList({ title, products }: ProductsListProps) {
   return (
     <div>
       <Title>{title}</Title>
       <Wrapper>
-        {products.map((product) => (
-          <Product img={product.img} name={product.name} price={product.price} />
+        {products?.map(({ product }) => (
+          <Product
+            img={product.imageObjects[0].small}
+            name={product.name}
+            price={product.priceSpecification.price}
+          />
         ))}
       </Wrapper>
     </div>

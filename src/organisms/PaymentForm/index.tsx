@@ -1,4 +1,4 @@
-import { IProduct, Product } from 'molecules/Product'
+// import { IProduct, Product } from 'molecules/Product'
 import { Title, Wrapper } from './styles'
 
 interface ProductsListProps {

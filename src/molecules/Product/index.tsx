@@ -1,7 +1,8 @@
+import { toCurrency } from 'utils/toCurrency'
 import { Wrapper, Title, Price } from './styles'
 
-export interface IProduct {
-  price: string;
+interface IProduct {
+  price: number;
   name: string;
   img: string;
 }
@@ -12,7 +13,7 @@ export function Product({ name, img, price }: IProduct) {
       <img src={img} alt={name} />
       <div>
         <Title>{name}</Title>
-        <Price>{price}</Price>
+        <Price>{toCurrency(price)}</Price>
       </div>
     </Wrapper>
   )
