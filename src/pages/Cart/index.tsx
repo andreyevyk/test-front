@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { ProductsList } from 'organisms/ProductsList'
 import { useEffect, useState } from 'react'
 import { IProducts } from 'organisms/ProductsList/types'
+import { PriceSummary } from 'organisms/PriceSummary'
 import { Container } from './styles'
 
 export interface ICart {
@@ -34,12 +35,12 @@ function Cart() {
     <Container>
       <ProductsList title="Produtos" products={cartData.items} />
 
-      {/* <PriceSummary
+      <PriceSummary
         subTotal={cartData.subTotal}
         shippingTotal={cartData.shippingTotal}
         descount={cartData.subTotal}
         total={cartData.total}
-      /> */}
+      />
 
       <Button onClick={ () => goToPayment()}>Seguir para pagamento</Button>
     </Container>
