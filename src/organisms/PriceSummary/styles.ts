@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
   }
 `
 
-export const Descount = styled.span`
+export const Discount = styled.span`
   color: ${({ theme }) => theme.colors.primary_light};
 `
 export const TotalPrice = styled.span`

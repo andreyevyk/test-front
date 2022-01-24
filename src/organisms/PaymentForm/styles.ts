@@ -9,7 +9,7 @@ export const Title = styled.div`
   text-transform: uppercase;
 `
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
   margin-top: 5px;
   padding: 12px;
 
@@ -18,6 +18,17 @@ export const Wrapper = styled.div`
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
 
   div + div {
-    margin-top: 15px;
+    margin-top: 25px;
+  }
+
+  footer {
+    margin-top: 25px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    div + div {
+      margin-top: 0px;
+    }
   }
 `

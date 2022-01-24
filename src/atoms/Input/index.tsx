@@ -1,5 +1,6 @@
 import { InputHTMLAttributes } from 'react'
 import { CSSProperties } from 'styled-components'
+import MaskedInput from 'react-input-mask'
 import { Wrapper } from './styles'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -7,13 +8,14 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: string;
   label: string;
   containerStyle?: CSSProperties;
+  mask?: string;
 }
 
-export function Input({ id, containerStyle, label, error, ...rest }: InputProps) {
+export function Input({ id, containerStyle, label, mask = '', error, ...rest }: InputProps) {
   return (
     <Wrapper hasError={!!error} style={containerStyle}>
       <label htmlFor={id}>{label}</label>
-      <input type="text" id={id} {...rest} />
+      <MaskedInput {...rest} mask={mask} maskChar={null} />
       {error && <span className="error">{error}</span>}
     </Wrapper>
   )

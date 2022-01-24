@@ -1,14 +1,14 @@
 import { toCurrency } from 'utils/toCurrency'
-import { Wrapper, Descount, TotalPrice } from './styles'
+import { Wrapper, Discount, TotalPrice } from './styles'
 
 interface IPriceSummary {
   subTotal: number;
   shippingTotal: number;
-  descount?: number;
+  discount?: number;
   total: number;
 }
 
-export function PriceSummary({ subTotal, shippingTotal, descount, total }: IPriceSummary) {
+export function PriceSummary({ subTotal, shippingTotal, discount, total }: IPriceSummary) {
   return (
     <Wrapper>
       <span className="summary-item">
@@ -17,10 +17,10 @@ export function PriceSummary({ subTotal, shippingTotal, descount, total }: IPric
       <span className="summary-item">
         Frete <span>{toCurrency(shippingTotal)}</span>
       </span>
-      {descount && (
-        <Descount className="summary-item">
-          Descontos <span>- {toCurrency(descount)}</span>
-        </Descount>
+      {!!discount && (
+        <Discount className="summary-item">
+          Descontos <span>- {toCurrency(discount)}</span>
+        </Discount>
       )}
       <TotalPrice className="summary-item">
         TOTAL <span>{toCurrency(total)}</span>

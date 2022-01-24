@@ -9,6 +9,7 @@ export function ProductsList({ title, products }: ProductsListProps) {
       <Wrapper>
         {products?.map(({ product }) => (
           <Product
+            key={product.name}
             img={product.imageObjects[0].small}
             name={product.name}
             price={product.priceSpecification.price}

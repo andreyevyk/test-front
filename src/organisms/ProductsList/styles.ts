@@ -10,6 +10,8 @@ export const Title = styled.div`
 `
 
 export const Wrapper = styled.div`
+  display: grid;
+
   margin-top: 5px;
   padding: 12px;
 

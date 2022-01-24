@@ -17,11 +17,11 @@ export interface ICart {
 
 
 function Cart() {
-  const navigate = useNavigate();
   const [cartData, setCartData] = useState<ICart>({} as ICart);
+  const navigate = useNavigate();
 
   function goToPayment(){
-    localStorage.setItem("cart", JSON.stringify(cartData));
+    localStorage.setItem("cartData", JSON.stringify(cartData));
     navigate("/payment")
   }
 
@@ -38,7 +38,7 @@ function Cart() {
       <PriceSummary
         subTotal={cartData.subTotal}
         shippingTotal={cartData.shippingTotal}
-        descount={cartData.subTotal}
+        discount={cartData.subTotal}
         total={cartData.total}
       />
 

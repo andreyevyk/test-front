@@ -19,6 +19,8 @@ export const Wrapper = styled.div<WrapperProps>`
 
   input {
     outline: none;
+    width: 100%;
+    box-sizing: border-box;
 
     padding: 12px;
 
@@ -44,5 +46,12 @@ export const Wrapper = styled.div<WrapperProps>`
       css`
         border-color: ${({ theme }) => theme.colors.error};
       `}
+  }
+  .error{
+    margin-top: 3px;
+
+    font-size: 12px;
+    line-height: 14px;
+    color: ${({ theme }) => theme.colors.error}
   }
 `
