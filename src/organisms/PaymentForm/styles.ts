@@ -9,7 +9,7 @@ export const Title = styled.div`
   text-transform: uppercase;
 `;
 
-export const Wrapper = styled.form`
+export const Wrapper = styled.div`
   margin-top: 5px;
   padding: 12px;
 

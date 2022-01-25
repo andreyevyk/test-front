@@ -1,26 +1,27 @@
 import { Input } from 'atoms/Input';
+import { Inputs } from 'pages/Payment';
 import { InputHTMLAttributes, useMemo } from 'react';
-import { Control, Controller, FieldValues, useFormState } from 'react-hook-form';
+import { Control, Controller, useFormState } from 'react-hook-form';
 
 interface IInputForm extends InputHTMLAttributes<HTMLInputElement> {
-  name: string;
-  control: Control<FieldValues, object> | undefined;
+  name: 'cardNumber' | 'cardHolder' | 'cardValidity' | 'cvv';
+  control: Control<Inputs, object>;
   label: string;
   mask?: string;
 }
 
 export function InputForm({ name, control, mask, label, ...rest }: IInputForm) {
   const { errors } = useFormState({ control });
-  const errorMessage: string = useMemo(() => errors[name]?.message, [errors]);
+  const errorMessage: string | undefined = useMemo(() => errors[name]?.message, [errors]);
 
   return (
     <Controller
       name={name}
       control={control}
       defaultValue=""
-      render={({ field }) => (
-        <Input mask={mask} label={label} error={errorMessage} {...field} {...rest} />
-      )}
+      render={({ field }) => {
+        return <Input mask={mask} label={label} error={errorMessage} {...rest} {...field} />;
+      }}
     />
   );
 }
