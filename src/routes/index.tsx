@@ -21,15 +21,6 @@ export function Routes() {
             />
           );
         })}
-        <Route
-          path="*"
-          element={
-            <main style={{ padding: '1rem' }}>
-              <p>There's nothing here!</p>
-            </main>
-          }
-        />
-        {/* <Route path="*" component={NotFound} /> */}
       </RouterRoutes>
     </BrowserRouter>
   );
