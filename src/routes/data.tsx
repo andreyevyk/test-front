@@ -2,6 +2,7 @@ import React from 'react';
 
 const Cart = React.lazy(() => import('../pages/Cart'));
 const Payment = React.lazy(() => import('../pages/Payment'));
+const Confirmation = React.lazy(() => import('../pages/Confirmation'));
 
 export interface IRoute {
   path: string;
@@ -23,6 +24,6 @@ export const routes: IRoute[] = [
   {
     path: '/confirmation',
     title: 'Confirmação',
-    element: Cart
+    element: Confirmation
   }
 ];

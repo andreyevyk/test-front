@@ -2,9 +2,9 @@ import { toCurrency } from 'utils/toCurrency';
 import { Wrapper, Title, Price } from './styles';
 
 interface IProduct {
-  price: number;
   name: string;
   img: string;
+  price?: number;
 }
 
 export function Product({ name, img, price }: IProduct) {

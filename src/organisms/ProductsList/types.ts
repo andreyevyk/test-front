@@ -15,4 +15,5 @@ export interface IProducts {
 export interface ProductsListProps {
   title: string;
   products: IProducts[];
+  showValues?: boolean;
 }
