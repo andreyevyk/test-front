@@ -1,4 +1,4 @@
-import { Title, Wrapper } from './styles';
+import { Title, Wrapper, Container } from './styles';
 
 export interface IPayment {
   cardNumber: string;
@@ -13,13 +13,13 @@ interface PaymentSummaryProps {
 
 export function PaymentSummary({ title, payment }: PaymentSummaryProps) {
   return (
-    <div>
+    <Container>
       <Title>{title}</Title>
       <Wrapper>
         <span>****.****.****.{payment.cardNumber}</span>
         <span>{payment.cardHolder}</span>
         <span>{payment.cardValidity}</span>
       </Wrapper>
-    </div>
+    </Container>
   );
 }

@@ -4,7 +4,7 @@ import { ProductsList } from 'organisms/ProductsList';
 import { useEffect, useState } from 'react';
 import { IProducts } from 'organisms/ProductsList/types';
 import { PriceSummary } from 'organisms/PriceSummary';
-import { Container } from './styles';
+import { Layout } from 'templates/Layout';
 
 export interface ICart {
   items: IProducts[];
@@ -30,7 +30,7 @@ function Cart() {
   }, []);
 
   return (
-    <Container>
+    <Layout>
       <ProductsList title="Produtos" products={cartData.items} />
 
       <PriceSummary
@@ -41,7 +41,7 @@ function Cart() {
       />
 
       <Button onClick={() => goToPayment()}>Seguir para pagamento</Button>
-    </Container>
+    </Layout>
   );
 }
 

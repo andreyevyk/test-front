@@ -5,6 +5,7 @@ import { Wrapper } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   id?: string;
+  className?: string;
   error?: string;
   label: string;
   containerStyle?: CSSProperties;
@@ -12,9 +13,9 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const Input = forwardRef<any, InputProps>(
-  ({ id, containerStyle, label, mask = '', error, ...rest }, ref) => {
+  ({ id, className, containerStyle, label, mask = '', error, ...rest }, ref) => {
     return (
-      <Wrapper hasError={!!error} style={containerStyle}>
+      <Wrapper className={className} hasError={!!error} style={containerStyle}>
         <label htmlFor={id}>{label}</label>
         <MaskedInput ref={ref} {...rest} mask={mask} maskChar={null} />
         {error && <span className="error">{error}</span>}

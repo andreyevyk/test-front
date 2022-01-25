@@ -9,6 +9,10 @@ export const Title = styled.div`
   text-transform: uppercase;
 `;
 
+export const Container = styled.div`
+  width: 100%;
+  max-width: 340px;
+`;
 export const Wrapper = styled.div`
   display: grid;
 
@@ -22,5 +26,9 @@ export const Wrapper = styled.div`
   span {
     font-size: 14px;
     line-height: 17px;
+  }
+
+  @media (min-width: 576px) {
+    max-width: 340px;
   }
 `;

@@ -4,7 +4,7 @@ import { PriceSummary } from 'organisms/PriceSummary';
 import { ProductsList } from 'organisms/ProductsList';
 import { ICart } from 'pages/Cart';
 import { useEffect, useState } from 'react';
-import { Container } from './styles';
+import { Layout } from 'templates/Layout';
 
 function Confirmation() {
   const [cartData, setCartData] = useState<ICart>({} as ICart);
@@ -22,17 +22,17 @@ function Confirmation() {
   }, []);
 
   return (
-    <Container>
+    <Layout>
       <PurchseConfirmation />
-      <PaymentSummary payment={paymentData} title="Pagamento" />
       <ProductsList title="Produtos" products={cartData.items} showValues={false} />
+      <PaymentSummary payment={paymentData} title="Pagamento" />
       <PriceSummary
         shippingTotal={cartData.shippingTotal}
         subTotal={cartData.subTotal}
         total={cartData.total}
         discount={cartData.discount}
       />
-    </Container>
+    </Layout>
   );
 }
 

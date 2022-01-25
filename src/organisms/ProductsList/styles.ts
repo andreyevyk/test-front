@@ -22,4 +22,17 @@ export const Wrapper = styled.div`
   div + div {
     margin-top: 15px;
   }
+
+  @media (min-width: 576px) {
+    gap: 15px 10px;
+
+    div + div {
+      margin-top: 0;
+    }
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
