@@ -1,4 +1,4 @@
-import { ReactNode, lazy } from 'react';
+import { lazy } from 'react';
 
 const Cart = lazy(() => import('../pages/Cart'));
 const Payment = lazy(() => import('../pages/Payment'));
@@ -7,7 +7,7 @@ const Confirmation = lazy(() => import('../pages/Confirmation'));
 export interface IRoute {
   path: string;
   title: string;
-  element: ReactNode;
+  element: any;
 }
 
 export const routes: IRoute[] = [
