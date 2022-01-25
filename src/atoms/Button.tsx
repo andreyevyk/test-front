@@ -25,4 +25,14 @@ export const Button = styled.button`
     background: #d45a00;
     box-shadow: none;
   }
+
+  &:disabled {
+    opacity: 70%;
+    box-shadow: none;
+    cursor: not-allowed;
+    &:hover {
+      background: ${({ theme }) => theme.colors.primary};
+      box-shadow: none;
+    }
+  }
 `;
