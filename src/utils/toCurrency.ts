@@ -3,7 +3,7 @@ export function toCurrency(value: number, currency = 'BRL') {
     return value.toLocaleString('pt-BR', {
       style: 'currency',
       currency
-    })
+    });
   }
-  return value
+  return value;
 }

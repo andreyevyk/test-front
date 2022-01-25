@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -21,12 +21,12 @@ export const Wrapper = styled.div`
   img {
     max-height: 60px;
   }
-`
+`;
 export const Title = styled.span`
   color: ${({ theme }) => theme.colors.text};
   font-size: 13px;
   line-height: 16px;
-`
+`;
 export const Price = styled.span`
   align-self: flex-end;
 
@@ -34,4 +34,4 @@ export const Price = styled.span`
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
-`
+`;

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Title = styled.div`
   color: ${({ theme }) => theme.colors.title};
@@ -7,7 +7,7 @@ export const Title = styled.div`
   line-height: 17px;
 
   text-transform: uppercase;
-`
+`;
 
 export const Wrapper = styled.form`
   margin-top: 5px;
@@ -31,4 +31,4 @@ export const Wrapper = styled.form`
       margin-top: 0px;
     }
   }
-`
+`;

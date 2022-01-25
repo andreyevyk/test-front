@@ -1,11 +1,10 @@
-/* eslint-disable prettier/prettier */
-import { Button } from 'atoms/Button'
-import { useNavigate } from 'react-router-dom'
-import { ProductsList } from 'organisms/ProductsList'
-import { useEffect, useState } from 'react'
-import { IProducts } from 'organisms/ProductsList/types'
-import { PriceSummary } from 'organisms/PriceSummary'
-import { Container } from './styles'
+import { Button } from 'atoms/Button';
+import { useNavigate } from 'react-router-dom';
+import { ProductsList } from 'organisms/ProductsList';
+import { useEffect, useState } from 'react';
+import { IProducts } from 'organisms/ProductsList/types';
+import { PriceSummary } from 'organisms/PriceSummary';
+import { Container } from './styles';
 
 export interface ICart {
   items: IProducts[];
@@ -15,21 +14,20 @@ export interface ICart {
   total: number;
 }
 
-
 function Cart() {
   const [cartData, setCartData] = useState<ICart>({} as ICart);
   const navigate = useNavigate();
 
-  function goToPayment(){
-    localStorage.setItem("cartData", JSON.stringify(cartData));
-    navigate("/payment")
+  function goToPayment() {
+    localStorage.setItem('cartData', JSON.stringify(cartData));
+    navigate('/payment');
   }
 
   useEffect(() => {
     fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
-        .then((response) => response.json())
-        .then(response => setCartData(response))
-  }, [])
+      .then((response) => response.json())
+      .then((response) => setCartData(response));
+  }, []);
 
   return (
     <Container>
@@ -42,9 +40,9 @@ function Cart() {
         total={cartData.total}
       />
 
-      <Button onClick={ () => goToPayment()}>Seguir para pagamento</Button>
+      <Button onClick={() => goToPayment()}>Seguir para pagamento</Button>
     </Container>
-  )
+  );
 }
 
-export default Cart
+export default Cart;

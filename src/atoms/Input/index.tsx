@@ -1,7 +1,7 @@
-import { InputHTMLAttributes } from 'react'
-import { CSSProperties } from 'styled-components'
-import MaskedInput from 'react-input-mask'
-import { Wrapper } from './styles'
+import { InputHTMLAttributes } from 'react';
+import { CSSProperties } from 'styled-components';
+import MaskedInput from 'react-input-mask';
+import { Wrapper } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   id?: string;
@@ -18,5 +18,5 @@ export function Input({ id, containerStyle, label, mask = '', error, ...rest }: 
       <MaskedInput {...rest} mask={mask} maskChar={null} />
       {error && <span className="error">{error}</span>}
     </Wrapper>
-  )
+  );
 }

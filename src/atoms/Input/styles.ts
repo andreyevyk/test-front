@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
 interface WrapperProps {
   hasError: boolean;
@@ -47,11 +47,11 @@ export const Wrapper = styled.div<WrapperProps>`
         border-color: ${({ theme }) => theme.colors.error};
       `}
   }
-  .error{
+  .error {
     margin-top: 3px;
 
     font-size: 12px;
     line-height: 14px;
-    color: ${({ theme }) => theme.colors.error}
+    color: ${({ theme }) => theme.colors.error};
   }
-`
+`;

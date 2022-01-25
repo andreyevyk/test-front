@@ -1,7 +1,7 @@
-import { ThemeProvider } from 'styled-components'
-import Routes from './routes'
-import GlobalStyle from './styles/globalStyle'
-import { defaultTheme } from './styles/theme'
+import { ThemeProvider } from 'styled-components';
+import Routes from './routes';
+import GlobalStyle from './styles/globalStyle';
+import { defaultTheme } from './styles/theme';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <GlobalStyle />
       <Routes />
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;

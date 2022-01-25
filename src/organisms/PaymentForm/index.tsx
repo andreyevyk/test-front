@@ -1,7 +1,7 @@
 // import { IProduct, Product } from 'molecules/Product'
-import { InputForm } from 'molecules/InputForm'
-import { Control, FieldValues } from 'react-hook-form'
-import { Title, Wrapper } from './styles'
+import { InputForm } from 'molecules/InputForm';
+import { Control, FieldValues } from 'react-hook-form';
+import { Title, Wrapper } from './styles';
 
 interface ProductsListProps {
   title: string;
@@ -37,5 +37,5 @@ export function PaymentForm({ title, formControl }: ProductsListProps) {
         </footer>
       </Wrapper>
     </div>
-  )
+  );
 }

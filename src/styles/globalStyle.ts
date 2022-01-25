@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import { resetCss } from './resetCss'
+import { createGlobalStyle } from 'styled-components';
+import { resetCss } from './resetCss';
 
 const GlobalStyle = createGlobalStyle`
   ${resetCss}
@@ -13,8 +13,6 @@ const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
   }
-}
+`;
 
-`
-
-export default GlobalStyle
+export default GlobalStyle;

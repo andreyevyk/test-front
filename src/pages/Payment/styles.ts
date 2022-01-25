@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.form`
   padding: 10px;
@@ -8,4 +8,4 @@ export const Container = styled.form`
   justify-content: space-around;
 
   height: calc(100% - 40px);
-`
+`;

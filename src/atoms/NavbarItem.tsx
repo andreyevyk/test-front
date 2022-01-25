@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 interface NavbarItemProps {
   isActive: boolean;
@@ -17,5 +17,4 @@ export const NavbarItem = styled.span <NavbarItemProps>`
 
   align-items: center;
   padding: 12px;
-
-`
+`;

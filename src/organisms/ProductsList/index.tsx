@@ -1,6 +1,6 @@
-import { Product } from 'molecules/Product'
-import { Title, Wrapper } from './styles'
-import { ProductsListProps } from './types'
+import { Product } from 'molecules/Product';
+import { Title, Wrapper } from './styles';
+import { ProductsListProps } from './types';
 
 export function ProductsList({ title, products }: ProductsListProps) {
   return (
@@ -17,5 +17,5 @@ export function ProductsList({ title, products }: ProductsListProps) {
         ))}
       </Wrapper>
     </div>
-  )
+  );
 }

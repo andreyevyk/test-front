@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Button = styled.button`
   height: 60px;
@@ -19,11 +19,10 @@ export const Button = styled.button`
   text-align: center;
   text-transform: uppercase;
 
-  transition: background 0.2s, box-shadow: 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
 
   &:hover {
     background: #d45a00;
     box-shadow: none;
-
   }
-`
+`;

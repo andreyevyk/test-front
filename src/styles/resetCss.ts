@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components';
 
 export const resetCss = css`
   html,
@@ -132,4 +132,4 @@ export const resetCss = css`
   div#root {
     height: 100vh;
   }
-`
+`;

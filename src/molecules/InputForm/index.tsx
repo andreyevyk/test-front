@@ -1,13 +1,6 @@
-import { Input } from 'atoms/Input'
-import { InputHTMLAttributes, useMemo } from 'react'
-import {
-  Control,
-  Controller,
-  FieldErrors,
-  FieldValues,
-  useFormContext,
-  useFormState
-} from 'react-hook-form'
+import { Input } from 'atoms/Input';
+import { InputHTMLAttributes, useMemo } from 'react';
+import { Control, Controller, FieldValues, useFormState } from 'react-hook-form';
 
 interface IInputForm extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -17,8 +10,8 @@ interface IInputForm extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export function InputForm({ name, control, mask, label, ...rest }: IInputForm) {
-  const { errors } = useFormState({ control })
-  const errorMessage: string = useMemo(() => errors[name]?.message, [errors])
+  const { errors } = useFormState({ control });
+  const errorMessage: string = useMemo(() => errors[name]?.message, [errors]);
 
   return (
     <Controller
@@ -29,5 +22,5 @@ export function InputForm({ name, control, mask, label, ...rest }: IInputForm) {
         <Input mask={mask} label={label} error={errorMessage} {...field} {...rest} />
       )}
     />
-  )
+  );
 }

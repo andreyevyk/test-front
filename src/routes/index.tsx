@@ -1,7 +1,7 @@
-import { Navbar } from 'molecules/Navbar'
-import React from 'react'
-import { BrowserRouter, Route, Routes as RouterRoutes } from 'react-router-dom'
-import { routes } from './data'
+import { Navbar } from 'molecules/Navbar';
+import React from 'react';
+import { BrowserRouter, Route, Routes as RouterRoutes } from 'react-router-dom';
+import { routes } from './data';
 
 export function Routes() {
   return (
@@ -19,7 +19,7 @@ export function Routes() {
                 </React.Suspense>
               }
             />
-          )
+          );
         })}
         <Route
           path="*"
@@ -32,7 +32,7 @@ export function Routes() {
         {/* <Route path="*" component={NotFound} /> */}
       </RouterRoutes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default Routes
+export default Routes;

@@ -1,6 +1,6 @@
-import { NavbarItem } from 'atoms/NavbarItem'
-import { IRoute } from 'routes/data'
-import { Container } from './styles'
+import { NavbarItem } from 'atoms/NavbarItem';
+import { IRoute } from 'routes/data';
+import { Container } from './styles';
 
 interface NavbarProps {
   path: string;
@@ -16,5 +16,5 @@ export function Navbar({ path, routes }: NavbarProps) {
         </NavbarItem>
       ))}
     </Container>
-  )
+  );
 }

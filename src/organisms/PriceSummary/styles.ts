@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -22,12 +22,12 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
   }
-`
+`;
 
 export const Discount = styled.span`
   color: ${({ theme }) => theme.colors.primary_light};
-`
+`;
 export const TotalPrice = styled.span`
   margin-top: 16px !important;
   font-weight: 700;
-`
+`;

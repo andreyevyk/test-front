@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const Cart = React.lazy(() => import('../pages/Cart'))
-const Payment = React.lazy(() => import('../pages/Payment'))
+const Cart = React.lazy(() => import('../pages/Cart'));
+const Payment = React.lazy(() => import('../pages/Payment'));
 
 export interface IRoute {
   path: string;
@@ -25,4 +25,4 @@ export const routes: IRoute[] = [
     title: 'Confirmação',
     element: Cart
   }
-]
+];

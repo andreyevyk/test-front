@@ -1,5 +1,5 @@
-import { toCurrency } from 'utils/toCurrency'
-import { Wrapper, Discount, TotalPrice } from './styles'
+import { toCurrency } from 'utils/toCurrency';
+import { Wrapper, Discount, TotalPrice } from './styles';
 
 interface IPriceSummary {
   subTotal: number;
@@ -26,5 +26,5 @@ export function PriceSummary({ subTotal, shippingTotal, discount, total }: IPric
         TOTAL <span>{toCurrency(total)}</span>
       </TotalPrice>
     </Wrapper>
-  )
+  );
 }

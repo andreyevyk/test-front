@@ -1,10 +1,10 @@
 export interface IProduct {
   name: string;
   imageObjects: {
-    small: string
+    small: string;
   }[];
   priceSpecification: {
-    price: number
+    price: number;
   };
 }
 
