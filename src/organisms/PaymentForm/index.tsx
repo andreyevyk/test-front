@@ -26,6 +26,9 @@ export function PaymentForm({ title, formControl }: ProductsListProps) {
       cvv: ''
     }
   });
+
+  const cardNumberWithoutPoints = useMemo(() => cardNumber?.replaceAll('.', ''), [cardNumber]);
+
   return (
     <div>
       <Title>{title}</Title>
@@ -75,7 +78,7 @@ export function PaymentForm({ title, formControl }: ProductsListProps) {
             }}
             locale={{ valid: 'mês ano' }}
             name={cardHolder!}
-            number={cardNumber!}
+            number={cardNumberWithoutPoints!}
           />
         )}
       </Wrapper>

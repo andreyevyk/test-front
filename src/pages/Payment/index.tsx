@@ -60,7 +60,6 @@ function Payment() {
       setCartData(parsedCart);
     }
   }, []);
-
   return (
     <Container>
       <PaymentForm formControl={control} title="Cartão de crédito" />

@@ -36,7 +36,7 @@ function Cart() {
       <PriceSummary
         subTotal={cartData.subTotal}
         shippingTotal={cartData.shippingTotal}
-        discount={cartData.subTotal}
+        discount={cartData.discount}
         total={cartData.total}
       />
 
