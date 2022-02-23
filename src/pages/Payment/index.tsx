@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 import { Container } from './styles';
 
 const schema = yup.object({
-  // Validar se cartão é válido
   cardNumber: yup.string().required('Campo Obrigatório').length(19, 'Numero inserido incorreto'),
   cardHolder: yup.string().required('Campo Obrigatório'),
   cardValidity: yup.string().required('Campo Obrigatório').length(7, 'Digite a data corretamente'),
@@ -35,12 +34,13 @@ function Payment() {
   const {
     control,
     handleSubmit,
-    formState: { isValid }
+    formState: { isSubmitted, isValid }
   } = useForm<Inputs>({
     mode: 'onChange',
     resolver: yupResolver(schema)
   });
 
+  console.log(isSubmitted, isValid);
   const onSubmit = (data: Inputs) => {
     const cardNumbersSplited = data.cardNumber.split('.');
     const lastCardNumbers = cardNumbersSplited[cardNumbersSplited.length - 1];
@@ -69,7 +69,7 @@ function Payment() {
         total={cartData.total}
         discount={cartData.discount}
       />
-      <Button disabled={!isValid} onClick={handleSubmit(onSubmit)}>
+      <Button disabled={isSubmitted && !isValid} onClick={handleSubmit(onSubmit)}>
         Finalizar o pedido
       </Button>
     </Container>
