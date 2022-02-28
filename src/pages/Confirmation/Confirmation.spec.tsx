@@ -1,6 +1,7 @@
-import { render, RenderResult } from '@testing-library/react';
+import { render, RenderResult, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from 'styles/theme';
+import { cartMocked } from 'test/mocks';
 import Confirmation from '.';
 
 const renderComponent = (): RenderResult =>
@@ -10,29 +11,6 @@ const renderComponent = (): RenderResult =>
     </ThemeProvider>
   );
 
-const cart = {
-  items: [
-    {
-      quantity: 1,
-      product: {
-        name: 'productTest',
-        imageObjects: [
-          {
-            small: 'imageSmall'
-          }
-        ],
-        priceSpecification: {
-          price: 10
-        }
-      }
-    }
-  ],
-  shippingTotal: 10,
-  subTotal: 20,
-  discount: 10,
-  total: 30
-};
-
 const payment = {
   cardNumber: 'cardNumber',
   cardHolder: 'cardHolder',
@@ -41,14 +19,23 @@ const payment = {
 
 describe('Confirmation Page', () => {
   beforeEach(() => {
-    window.localStorage.setItem('cartData', JSON.stringify(cart));
+    window.localStorage.setItem('cartData', JSON.stringify(cartMocked));
     window.localStorage.setItem('paymentData', JSON.stringify(payment));
   });
   it('Should render Confirmation Page', () => {
-    const { getByText } = renderComponent();
+    renderComponent();
 
-    expect(getByText('Compra efetuada com sucesso')).toBeInTheDocument();
-    expect(getByText('productTest')).toBeInTheDocument();
-    expect(getByText('cardHolder')).toBeInTheDocument();
+    expect(screen.getByText('Compra efetuada com sucesso')).toBeInTheDocument();
+  });
+  it('list Items from storage', () => {
+    renderComponent();
+
+    expect(
+      screen.getByAltText('Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml')
+    ).toBeInTheDocument();
+    expect(screen.getByText('R$ 5,30')).toBeInTheDocument();
+    expect(screen.getByText('- R$ 30,00')).toBeInTheDocument();
+    expect(screen.getByText('R$ 624,80')).toBeInTheDocument();
+    expect(screen.getByText('R$ 618,90')).toBeInTheDocument();
   });
 });
