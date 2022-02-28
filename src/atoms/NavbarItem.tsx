@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-interface NavbarItemProps {
+export interface NavbarItemProps {
   isActive: boolean;
 }
 

@@ -1,17 +1,18 @@
 import { Input } from 'atoms/Input';
-import { Inputs } from 'pages/Payment';
 import { InputHTMLAttributes } from 'react';
-import { Control, Controller, useFormState } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 
-interface IInputForm extends InputHTMLAttributes<HTMLInputElement> {
-  name: 'cardNumber' | 'cardHolder' | 'cardValidity' | 'cvv';
-  control: Control<Inputs, object>;
+export interface IInputForm extends InputHTMLAttributes<HTMLInputElement> {
+  name: string;
   label: string;
   mask?: string;
 }
 
-export function InputForm({ name, control, mask, label, ...rest }: IInputForm) {
-  const { errors } = useFormState({ control });
+export function InputForm({ name, mask, label, ...rest }: IInputForm) {
+  const {
+    control,
+    formState: { errors }
+  } = useFormContext();
   return (
     <Controller
       name={name}

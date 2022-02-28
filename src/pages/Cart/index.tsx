@@ -22,7 +22,6 @@ function Cart() {
     localStorage.setItem('cartData', JSON.stringify(cartData));
     navigate('/payment');
   }
-
   useEffect(() => {
     fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
       .then((response) => response.json())

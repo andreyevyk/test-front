@@ -1,7 +1,7 @@
 import { toCurrency } from 'utils/toCurrency';
 import { Wrapper, Discount, TotalPrice } from './styles';
 
-interface IPriceSummary {
+export interface IPriceSummary {
   subTotal: number;
   shippingTotal: number;
   discount?: number;

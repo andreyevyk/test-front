@@ -1,7 +1,7 @@
 import { toCurrency } from 'utils/toCurrency';
 import { Wrapper, Title, Price } from './styles';
 
-interface IProduct {
+export interface IProduct {
   name: string;
   img: string;
   price?: number;

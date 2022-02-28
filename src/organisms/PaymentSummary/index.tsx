@@ -6,7 +6,7 @@ export interface IPayment {
   cardValidity: string;
 }
 
-interface PaymentSummaryProps {
+export interface PaymentSummaryProps {
   title: string;
   payment: IPayment;
 }

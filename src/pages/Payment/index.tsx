@@ -1,13 +1,13 @@
 import { Button } from 'atoms/Button';
 import { PaymentForm } from 'organisms/PaymentForm';
 import { PriceSummary } from 'organisms/PriceSummary';
-import { useForm } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { ICart } from 'pages/Cart';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container } from './styles';
+import { Form } from './styles';
 
 const schema = yup.object({
   cardNumber: yup.string().required('Campo Obrigatório').length(19, 'Numero inserido incorreto'),
@@ -31,16 +31,16 @@ function Payment() {
   const [cartData, setCartData] = useState<ICart>({} as ICart);
   const navigate = useNavigate();
 
-  const {
-    control,
-    handleSubmit,
-    formState: { isSubmitted, isValid }
-  } = useForm<Inputs>({
+  const methods = useForm<Inputs>({
     mode: 'onChange',
     resolver: yupResolver(schema)
   });
 
-  console.log(isSubmitted, isValid);
+  const {
+    handleSubmit,
+    formState: { isSubmitted, isValid }
+  } = methods;
+
   const onSubmit = (data: Inputs) => {
     const cardNumbersSplited = data.cardNumber.split('.');
     const lastCardNumbers = cardNumbersSplited[cardNumbersSplited.length - 1];
@@ -60,19 +60,22 @@ function Payment() {
       setCartData(parsedCart);
     }
   }, []);
+
   return (
-    <Container>
-      <PaymentForm formControl={control} title="Cartão de crédito" />
-      <PriceSummary
-        shippingTotal={cartData.shippingTotal}
-        subTotal={cartData.subTotal}
-        total={cartData.total}
-        discount={cartData.discount}
-      />
-      <Button disabled={isSubmitted && !isValid} onClick={handleSubmit(onSubmit)}>
-        Finalizar o pedido
-      </Button>
-    </Container>
+    <FormProvider {...methods}>
+      <Form>
+        <PaymentForm title="Cartão de crédito" />
+        <PriceSummary
+          shippingTotal={cartData.shippingTotal}
+          subTotal={cartData.subTotal}
+          total={cartData.total}
+          discount={cartData.discount}
+        />
+        <Button disabled={isSubmitted && !isValid} onClick={handleSubmit(onSubmit)}>
+          Finalizar o pedido
+        </Button>
+      </Form>
+    </FormProvider>
   );
 }
 
